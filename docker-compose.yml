@@ -3,8 +3,7 @@ services:
   node-app:
     container_name: "docker-container"
     build: .
-    volumes:
-      - ./:/app:ro
     ports:
       - "5000:5000"
-    
+    env_file:
+      - ./.env

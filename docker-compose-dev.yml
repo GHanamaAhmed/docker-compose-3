@@ -3,8 +3,7 @@ services:
   node-app:
     build:
       context: .
-      args:
-        - DB=mongo
+      target: dev
     volumes:
       - ./:/app:ro
     environment:

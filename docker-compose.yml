@@ -2,8 +2,8 @@ version: '3'
 services:
   node-app:
     container_name: "docker-container"
-    build: .
     ports:
       - "5000:5000"
     env_file:
       - ./.env
+    command: npm run dev

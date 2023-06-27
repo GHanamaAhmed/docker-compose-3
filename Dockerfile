@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm i
+ARG DB
+
+RUN if ["$DB"="mongo"]; then npm i; else npm i --only=production ;fi
 
 COPY . .
 
 EXPOSE 5000
-
-CMD [ "npm","run","dev" ]
